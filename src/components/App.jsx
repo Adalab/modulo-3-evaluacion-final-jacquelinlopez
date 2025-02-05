@@ -1,9 +1,10 @@
+import "../styles/App.scss";
 import { Routes, Route } from "react-router-dom";
-import "../styles/app.css";
-import CharacterList from "./CharacterList";
-import api from "../services/api";
 import { useEffect, useState } from "react";
+import CharacterList from "./CharacterList";
 import getDataApi from "../services/api";
+import Header from "./Header";
+
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
   return (
    
       <>
+
+      <Header />
       <Routes>
         
         <Route path="/" element={<CharacterList data={characters} />} />
