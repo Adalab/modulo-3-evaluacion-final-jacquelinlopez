@@ -60,3 +60,88 @@ select{
   margin-left: 22px;
 }
 
+.detail{
+  background-color: rgb(146, 26, 26);
+  padding: 30px;;
+}
+
+.btn_back{
+  color: white;
+}
+
+/* Para pantallas de 768px o menos (tablets y móviles) */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    justify-content: flex-start; /* Evita que el contenido se quede centrado */
+  }
+
+  .character_list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Reduce el tamaño de las tarjetas */
+    gap: 10px;
+  }
+
+  .character_card {
+    width: 90%; /* Reduce el ancho de las tarjetas */
+  }
+
+  .character_card h3 {
+    font-size: 1.2rem;
+  }
+
+  .character_card p {
+    font-size: 0.9rem;
+  }
+
+  .character_card img {
+    height: 250px; /* Reduce la altura de las imágenes */
+  }
+
+  .detail {
+    padding: 20px;
+    text-align: center; /* Asegura que el contenido esté alineado */
+  }
+
+  .btn_back {
+    font-size: 1rem;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+  }
+}
+
+/* Para pantallas de 480px o menos (móviles pequeños) */
+@media (max-width: 480px) {
+  .character_list {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  .character_card {
+    width: 100%;
+  }
+
+  .character_card h3 {
+    font-size: 1rem;
+  }
+
+  .character_card p {
+    font-size: 0.8rem;
+  }
+
+  .character_card img {
+    height: 200px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .btn_back {
+    width: 100%;
+    padding: 12px;
+  }
+}
+

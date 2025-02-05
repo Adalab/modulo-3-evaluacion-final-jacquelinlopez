@@ -10,11 +10,11 @@ function FilterHouse({setFilterHouse}) {
     <div className='select'>
       <label htmlFor="">Seleccione la casa:</label>
       <select name="" id="" onChange={handleSelect}> 
-        <option value="">Todos</option>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Hufflepuff">Hufflepuff</option>
         <option value="Ravenclaw">Ravenclaw</option>
         <option value="Slytherin">Slytherin</option>
+        <option value="">Todos</option>
       </select>
     </div>
   );

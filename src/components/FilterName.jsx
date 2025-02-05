@@ -8,8 +8,8 @@ const handleInput = (ev) =>{
 
   return (
     <div className='input'>
-      <label htmlFor="">Busca por personaje:</label>
-      <input type="text" onChange={handleInput}/>
+        <label htmlFor="">Busca por personaje:</label>
+        <input type="text" onChange={handleInput}/>
     </div>
   )
 }
