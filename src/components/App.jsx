@@ -11,13 +11,26 @@ function App() {
 
   const [characters, setCharacters] = useState([])
   const [filterName, setFilterName] = useState("")
+  const [filterHouse, setFilterHouse] = useState("Gryffindor");
 
   //datos api
   useEffect(()=>{
-    getDataApi().then((data)=>{setCharacters(data)})
-  } , [])
+    getDataApi(filterHouse)
+    .then((data)=>{
+      setCharacters(data);
+    });
 
-  const filtersCharacters = characters.filter((item) => item.name.toLowerCase().includes(filterName))
+    
+  } , [filterHouse]);
+
+
+  //filtro para buscar personajes y casa 
+  const filtersCharacters = characters
+  .filter((item) => item.name.toLowerCase().includes(filterName.toLowerCase()))
+  .filter((item)=> (filterHouse ? item.house === filterHouse : true));
+
+
+  //
 
   return (
    
@@ -29,7 +42,7 @@ function App() {
       
           <Route path="/" element={
             <>
-              <Filters setFilterName={setFilterName}/>
+              <Filters setFilterName={setFilterName} setFilterHouse ={setFilterHouse}/>
               {filtersCharacters.length > 0 ? (
               <CharacterList  data={filtersCharacters}  /> 
             ) : (
